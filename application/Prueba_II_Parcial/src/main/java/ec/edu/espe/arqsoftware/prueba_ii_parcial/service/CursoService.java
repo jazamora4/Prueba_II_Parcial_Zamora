@@ -25,15 +25,12 @@ public class CursoService {
         List<Curso> cursos = this.cursoRepository.findByAreaAndNombreLike(area, nombre);
         List<Curso> response = new ArrayList<>();
         Date actualDate = new Date();
-        Date dt = new Date();
-        Calendar c = Calendar.getInstance();
-        c.setTime(dt);
-        c.add(Calendar.DATE, 1);
-        dt = c.getTime();
+        Date dt = this.futureDate(1);
         if(!cursos.isEmpty()){
             for (Curso curso:
                  cursos) {
-                if(!curso.getFechaInicio().before(actualDate) && !curso.getFechaInicio().after(dt)){
+                if(!curso.getFechaInicio().before(actualDate)
+                        && !curso.getFechaInicio().after(dt)){
                     response.add(curso);
                 }
             }
@@ -48,4 +45,15 @@ public class CursoService {
             throw new FindException("No existe ningun elemento que coincida con los parametros dados");
         }
     }
+
+    private Date futureDate(Integer numOfDays){
+        Date dt = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(dt);
+        c.add(Calendar.DATE, numOfDays);
+        dt = c.getTime();
+        return dt;
+    }
+
+
 }

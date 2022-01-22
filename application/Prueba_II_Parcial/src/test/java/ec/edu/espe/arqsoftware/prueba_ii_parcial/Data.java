@@ -1,8 +1,10 @@
 package ec.edu.espe.arqsoftware.prueba_ii_parcial;
 
 import ec.edu.espe.arqsoftware.prueba_ii_parcial.dto.EstudianteRQ;
+import ec.edu.espe.arqsoftware.prueba_ii_parcial.model.Curso;
 import ec.edu.espe.arqsoftware.prueba_ii_parcial.model.Estudiante;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -61,5 +63,57 @@ public class Data {
             e.printStackTrace();
         }
     }
+
+    public static Curso CURSO_001 = null;
+    static {
+        try {
+            CURSO_001 = new Curso(
+                    "abc123abc",
+                    "MAT1",
+                    "EXACTAS",
+                    "MATEMATICA BASICA",
+                    125,
+                    new SimpleDateFormat("yyyy-MM-dd").parse("2022-01-23"),
+                    new BigDecimal("125.36")
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Curso CURSO_002 = null;
+    static {
+        try {
+            CURSO_002 = new Curso(
+                    "abc123abd",
+                    "MAT2",
+                    "EXACTAS",
+                    "MATEMATICA SUPERIOR",
+                    125,
+                    new SimpleDateFormat("yyyy-MM-dd").parse("2022-01-22"),
+                    new BigDecimal("125.36")
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Curso CURSO_003 = null;
+    static {
+        try {
+            CURSO_003 = new Curso(
+                    "abc123abB",
+                    "COMP1",
+                    "COMPUTACION",
+                    "EXCEL BASICO",
+                    125,
+                    new SimpleDateFormat("yyyy-MM-dd").parse("2022-01-25"),
+                    new BigDecimal("125.36")
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
