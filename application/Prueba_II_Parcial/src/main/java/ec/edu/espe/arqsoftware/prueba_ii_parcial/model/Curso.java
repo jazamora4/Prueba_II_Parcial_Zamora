@@ -6,8 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
-import java.util.List;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -15,15 +14,15 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Document(collection = "clientes")
-public class Cliente {
+@Document(collection = "cursos")
+public class Curso {
     @Id
     private String id;
     @Indexed(unique=true)
-    private String identificacion;
-    private String nombres;
-    private String apellidos;
-    private BigDecimal salario;
-    private ZonedDateTime timeOfCreation;
-    private List<Direccion> direcciones;
+    private String codigo;
+    private String area;
+    private String nombre;
+    private Integer duracionHoras;
+    private Date fechaInicio;
+    private BigDecimal costo;
 }

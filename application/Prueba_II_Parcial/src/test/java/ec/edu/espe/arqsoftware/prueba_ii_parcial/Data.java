@@ -1,61 +1,65 @@
 package ec.edu.espe.arqsoftware.prueba_ii_parcial;
 
-import ec.edu.espe.arqsoftware.prueba_ii_parcial.dto.ClienteRQ;
-import ec.edu.espe.arqsoftware.prueba_ii_parcial.model.Cliente;
-import ec.edu.espe.arqsoftware.prueba_ii_parcial.model.Direccion;
+import ec.edu.espe.arqsoftware.prueba_ii_parcial.dto.EstudianteRQ;
+import ec.edu.espe.arqsoftware.prueba_ii_parcial.model.Estudiante;
 
-import java.math.BigDecimal;
-import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+
 public class Data {
-    public static final Direccion DIRECCION_001 = new Direccion(
-            "Ambato",
-            "Tungurahua",
-            "Ecuador",
-            "Av. Cevallos"
-    );
+    public static Estudiante ESTUDIANTE_001 = null;
 
-    public static final Direccion DIRECCION_002 = new Direccion(
-            "Ambato",
-            "Tungurahua",
-            "Ecuador",
-            "Av. 12 de Noviembre"
-    );
+    static {
+        try {
+            ESTUDIANTE_001 = new Estudiante(
+                    "123abc456",
+                    "Jose Andres",
+                    "jazamora4@espe.edu.ec",
+                    "ECU",
+                    new SimpleDateFormat("yyyy-MM-dd").parse("1999-04-21"),
+                    new Date(),
+                    "ACT"
 
-    public static final List<Direccion> DIRECCIONES = new ArrayList<>(Arrays.asList(DIRECCION_001,DIRECCION_002));
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
-    public static final Cliente CLIENTE_001 = new Cliente(
-            "123abc456",
-            "1805129630",
-            "José Andrés",
-            "Zamora Miranda",
-            new BigDecimal("35.25"),
-            ZonedDateTime.parse("2020-01-19T14:28:11.252+05:00[America/Guayaquil]"),
-            DIRECCIONES
-    );
+    public static Estudiante ESTUDIANTE_002 = null;
 
-    public static final Cliente CLIENTE_002 = new Cliente(
-            "123abc457",
-            "1805129631",
-            "José Andrés",
-            "Zamora Miranda",
-            new BigDecimal("354.25"),
-            ZonedDateTime.parse("2020-01-19T14:38:11.252+05:00[America/Guayaquil]"),
-            DIRECCIONES
-    );
+    static {
+        try {
+            ESTUDIANTE_002 = new Estudiante(
+                    "123abc457",
+                    "Juan Andres",
+                    "jazamora5@espe.edu.ec",
+                    "ECU",
+                    new SimpleDateFormat("yyyy-MM-dd").parse("1999-04-21"),
+                    new Date(),
+                    "ACT"
 
-    public static final ClienteRQ CLIENTE_RQ_001 = new ClienteRQ(
-            "1805129630",
-            "José Andrés",
-            "Zamora Miranda",
-            new BigDecimal("354.25"),
-            DIRECCIONES
-    );
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 
-    public static final List<Cliente> CLIENTES = new ArrayList<>(
-            Arrays.asList(CLIENTE_001,CLIENTE_002)
-    );
+    public static EstudianteRQ ESTUDIANTE_001_RQ = null;
+    static {
+        try {
+            ESTUDIANTE_001_RQ = new EstudianteRQ(
+                    "Jose Andres",
+                    "jazamora4@espe.edu.ec",
+                    "ECU",
+                    new SimpleDateFormat("yyyy-MM-dd").parse("1999-04-21")
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
