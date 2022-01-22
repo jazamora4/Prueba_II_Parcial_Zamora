@@ -7,6 +7,7 @@ import ec.edu.espe.arqsoftware.prueba_ii_parcial.model.Estudiante;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +24,8 @@ public class Data {
                     "ECU",
                     new SimpleDateFormat("yyyy-MM-dd").parse("1999-04-21"),
                     new Date(),
-                    "ACT"
+                    "ACT",
+                    new ArrayList<>()
 
             );
         } catch (ParseException e) {
@@ -42,7 +44,8 @@ public class Data {
                     "ECU",
                     new SimpleDateFormat("yyyy-MM-dd").parse("1999-04-21"),
                     new Date(),
-                    "ACT"
+                    "ACT",
+                    new ArrayList<>()
 
             );
         } catch (ParseException e) {

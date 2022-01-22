@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,4 +25,5 @@ public class Estudiante {
     private Date fechaNacimiento;
     private Date fechaCreacion;
     private String estado;
+    private List<EstudianteCurso> cursos;
 }

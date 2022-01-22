@@ -11,7 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class MatriculaRS {
+public class Matricula {
     private String correo;
     private String nombreEstudiante;
     private String area;
