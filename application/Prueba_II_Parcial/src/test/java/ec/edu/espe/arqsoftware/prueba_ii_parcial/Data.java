@@ -98,6 +98,23 @@ public class Data {
         }
     }
 
+    public static Curso CURSO_004 = null;
+    static {
+        try {
+            CURSO_004 = new Curso(
+                    "abc133abd",
+                    "MAT3",
+                    "EXACTAS",
+                    "MATEMATICA BASICA 2",
+                    125,
+                    new SimpleDateFormat("yyyy-MM-dd").parse("2022-01-25"),
+                    new BigDecimal("125.36")
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static Curso CURSO_003 = null;
     static {
         try {

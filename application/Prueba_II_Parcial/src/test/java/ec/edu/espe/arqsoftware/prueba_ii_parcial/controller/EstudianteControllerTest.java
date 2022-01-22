@@ -28,7 +28,7 @@ class EstudianteControllerTest {
     private EstudianteService estudianteService;
 
     @Test
-    public void crearEstudiante() throws Exception{
+    public void crearEstudianteTest() throws Exception{
         Estudiante estudiante = new Estudiante();
         estudiante.setNombre(Data.ESTUDIANTE_001_RQ.getNombre());
         estudiante.setPais(Data.ESTUDIANTE_001_RQ.getPais());
@@ -47,7 +47,7 @@ class EstudianteControllerTest {
     }
 
     @Test
-    public void crearEstudianteCreateException() throws Exception{
+    public void crearEstudianteTestCreateException() throws Exception{
         Estudiante estudiante = new Estudiante();
         estudiante.setNombre(Data.ESTUDIANTE_001_RQ.getNombre());
         estudiante.setPais(Data.ESTUDIANTE_001_RQ.getPais());
